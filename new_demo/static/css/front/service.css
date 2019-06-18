@@ -8,10 +8,11 @@ div.back-img{
 
 div.back-img img{
     width: 100%;
-    height: 300px;
+    height: 400px;
 }
 
 div.jumbotron{
+    height: 400px;
     margin-right: auto;
     margin-left: auto;
     margin-bottom: 50px;

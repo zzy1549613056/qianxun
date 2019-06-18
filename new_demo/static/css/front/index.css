@@ -1,3 +1,8 @@
+.inner-banner{
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
 div.service-head{
     text-align: center;
 }
@@ -52,6 +57,7 @@ div.service-title{
 }
 
 div.service-img{
+    width: 100%;
     position: absolute;
     right: 0;
     top: 0;
