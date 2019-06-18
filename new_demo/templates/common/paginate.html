@@ -1,0 +1,23 @@
+{{ css_static('common/paginate/paginate.css') }}
+
+<nav aria-label="Page navigation" data-pages="{{ paginate.pages/5 }}" data-page="{{ (paginate.page/5 + 0.8)|int }}" id="navigation" data-last="{{ paginate.pages%5 }}">
+  <ul class="pagination">
+    <li>
+      <a href="#" aria-label="Previous" id="pre">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+    <li><a href="#">1</a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#">4</a></li>
+    <li><a href="#">5</a></li>
+    <li>
+      <a href="#" aria-label="Next" id="next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+{#            {% if paginate.has_prev %}<a href="{{ url_for('front.index', page = paginate.prev_num) }}"><< 上一页</a>{% else %}<<到头了{% endif %} |#}
+{#            {% if paginate.has_next %}<a href="{{ url_for('front.index', page = paginate.next_num) }}">下一页 >></a>{% else %}结束了 >>{% endif %}#}

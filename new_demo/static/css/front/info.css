@@ -1,0 +1,86 @@
+div.postings-container{
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+div.boards-container{
+    margin: 20px 20px 20px 40px;
+    font-size: large;
+    border-bottom: solid 1px;
+}
+
+div .info-top img{
+    height: 200px;
+}
+
+div.info-group{
+    border: 1px solid #e8e8e8;
+    margin-top: 20px;
+    background-color: snow;
+    padding: 20px;
+    overflow: hidden;
+}
+
+div.info-group:hover{
+    box-shadow: 0 2px 8px rgba(0,0,0,0.09);
+}
+
+.list-group-item:first-child{
+    margin-right: 30px;
+}
+
+div .list-group a{
+    margin: 4px;
+    float: left;
+    background-color:antiquewhite;
+}
+
+div .list-group{
+    overflow: hidden;
+}
+
+
+ul.postings-list{
+    list-style: none;
+
+}
+
+ul.postings-list li{
+    overflow: hidden;
+    padding-right: 15px;
+    padding-bottom: 20px;
+
+}
+
+p.title-info{
+    font-size: 25px;
+    font-family: '微软雅黑';
+    font-weight:bolder;
+}
+
+p.title-info a{
+    color: black;
+}
+
+p.posting-info{
+    margin-top: 20px;
+    font-size: 18px;
+    color: darkgray;
+}
+
+p.content-info{
+    font-size: 18px;
+    color: darkgray;
+}
+
+nav#navigation{
+   text-align: center;
+}
+
+div.pic img{
+    width: 100%;
+    height: 140px ;
+    margin-right: 20px;
+}
+

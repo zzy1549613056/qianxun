@@ -1,0 +1,73 @@
+body{
+    padding-top: 60px;
+}
+
+nav.navbar{
+    padding: 5px 40px;
+    font-family: "microsoft yahei",Helvetica,Tahoma,sans-serif;
+    font-size: 16px;
+}
+
+.navbar-inverse .navbar-nav>li>a{
+    color: #FFFFFF!important;
+}
+
+.navbar-brand{
+    padding-top: 5px!important; 
+}
+
+.navbar-brand>img{
+    height: 40px;
+    width: 160px;
+}
+
+div.content-container{
+    overflow: hidden;
+}
+
+footer{
+    background-color: black;
+    color: white;
+    font-size: 20px;
+}
+
+div.foot-container{
+    padding: 15px 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+footer div.left p{
+    font-size: 15px;
+}
+
+footer div.left p.contact{
+    font-size: 25px;
+}
+
+footer div.left p.phone{
+    font-size: 40px;
+}
+
+footer div.right{
+    text-align: center;
+}
+
+footer div.bottom-bar{
+    padding: 10px 20px;
+    border-top: 0.5px solid gray;
+    font-size: 12px;
+    color: gray;
+}
+
+p.link span{
+    padding-right: 15px;
+}
+
+div.carousel-inner .banner{
+    width: 100%;
+}
+
+
+
+

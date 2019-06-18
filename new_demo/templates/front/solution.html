@@ -1,0 +1,12 @@
+{% extends 'front/base.html' %}
+{% block content %}
+{% if id==1 %}
+    <p>电商从业者合规运营咨询培训</p>
+{% elif id==2 %}
+    <p>消费者消费维权咨询培训</p>
+{% elif id==3 %}
+    <p>知名品牌知识产权保护咨询</p>
+{% else %}
+    <p>未找到网页404</p>
+{% endif %}
+{% endblock %}

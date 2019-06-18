@@ -1,0 +1,45 @@
+{% extends 'cms/base.html' %}
+
+{% block title %}版块管理{% endblock %}
+
+{% block content_title %}版块管理{% endblock %}
+
+{% block css_js %}
+{{ js_static('js/cms/boards.js') }}
+{{ css_static('css/cms/boards.css') }}
+{% endblock %}
+
+{% block content %}
+<div class="top-box">
+    <button class="btn btn-warning add-board" id="add-board">添加版块</button>
+</div>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>版块名称</th>
+            <th>帖子数量</th>
+            <th>创建时间</th>
+            <th>操作</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for board in boards %}
+        <tr data-id="{{ board.id }}" data-name="{{ board.name }}">
+            <td>{{ board.name }}</td>
+            <td>{{ board.postings|length }}</td>
+            <td>{{ board.create_time }}</td>
+            <td>
+                <button class="btn btn-primary btn-xs edit-board">编辑</button>
+                <button class="btn btn-danger btn-xs delete-board">删除</button>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+
+
+
+
+{% endblock %}

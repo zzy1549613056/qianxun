@@ -1,0 +1,62 @@
+{% extends 'front/base.html' %}
+{% block css_js %}
+{{ css_static("css/front/info.css") }}
+{{ js_static('common/paginate/paginate.js') }}
+{% endblock %}
+{% block content %}
+<div class="info-top">
+    <img src="{{ url_for('static',filename='img/info.jpg') }}">
+</div>
+<div class="boards-container">
+    <div class="list-group">
+        {% if current_board %}
+        <a href="{{ url_for('front.info')}}" class="list-group-item">所有资讯</a>
+        {% else %}
+        <a href="{{ url_for('front.info') }}" class="list-group-item active">所有资讯</a>
+        {% endif %}
+    {% for board in boards %}
+        {% if board.id == current_board %}
+        <a href="{{ url_for('front.info',id=board.id) }}" class="list-group-item active">{{ board.name }}</a>
+        {% else %}
+        <a href="{{ url_for('front.info',id=board.id) }}" class="list-group-item">{{ board.name }}</a>
+        {% endif %}
+    {% endfor %}
+    </div>
+    {% if not current_board %}
+    <p>所有资讯</p>
+    {% else %}
+    {% for board in boards %}
+    {% if board.id == current_board  %}
+    <P>{{ board.name }}</P>
+    {% endif %}
+    {% endfor %}
+    {% endif %}
+</div>
+
+<div class="postings-container">
+    <div class="postings-group">
+        <ul class="postings-list">
+            {% for posting in postings %}
+            <li>
+
+                <div class="info-group">
+                    <div class="pic col-md-3" ><img src="{{ posting.content|safe|get_img }}"></div>
+                    <div class="info col-md-9" >
+                    <p class="title-info"><a href="{{ url_for('front.info_detail',id=posting.id) }}">{{ posting.title }}</a></p>
+                    {% set content = posting.content|safe|cut %}
+                    <p class="content-info">{{ content|truncate(50,True)}}</p>
+                    <p class="posting-info">
+                        <span>{{ posting.create_time }}</span>
+                    </p>
+                    </div>
+
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+        {% include'common/paginate.html' %}
+    </div>
+</div>
+
+
+{% endblock %}

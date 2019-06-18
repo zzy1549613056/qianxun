@@ -1,0 +1,7 @@
+div.top-box{
+    overflow: hidden;
+    padding: 10px 0;
+}
+button.add-board{
+    float:right;
+}

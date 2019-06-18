@@ -1,0 +1,27 @@
+{% extends 'cms/base.html' %}
+{% block css_js %}
+    {{ js_static('common/paginate/paginate.js') }}
+    {{ js_static('js/cms/post_manage.js') }}
+    {{ css_static('css/cms/post_manage.css') }}
+{% endblock %}
+{% block content %}
+    <table class="table table-bordered">
+        <tr>
+            <th>#</th>
+            <th>标题</th>
+            <th><a href="{{ url_for('cms.post_manage',search='time') }}">发布时间</a></th>
+            <th><a href="{{ url_for('cms.post_manage',search='board') }}">所属版块</a></th>
+            <th>操作</th>
+        </tr>
+        {% for post in paginate.items %}
+        <tr data-id="{{ post.id }}" data-title="{{ post.title }}">
+            <td class="index"></td>
+            <td>{{ post.title |truncate(15,True,'..',0)}}</td>
+            <td>{{ post.create_time }}</td>
+            <td>{{ post.board.name }}</td>
+            <td><button class="btn btn-danger delete-post">删除</button></td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% include'common/paginate.html' %}
+{% endblock %}

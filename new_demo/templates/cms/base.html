@@ -1,0 +1,73 @@
+{% from "common/macros.html" import css_static,js_static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+{#    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">#}
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>千寻科技cms</title>
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://cdn.bootcss.com/sweetalert/2.1.0/sweetalert.min.js"></script>
+    {{ css_static('css/cms/base.css') }}
+    {{ js_static('js/cms/base.js') }}
+    {% block css_js %}{% endblock %}
+</head>
+<body>
+     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+            <a class="navbar-brand" href="#">千寻科技后台管理系统<span style="color:red;font-size: 12px">&nbsp&nbsp&nbsp&nbsp(只支持电脑设备登录，不支持移动设备)</span></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">{{ user.username }}</a></li>
+            <li><a href="{{ url_for('cms.logout') }}">注销</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+          <div class="col-sm-3 col-md-2 sidebar">
+              <ul class="nav-sidebar">
+                <li class="unfold"><a href="{{ url_for('cms.index') }}">首页</a></li>
+                <li class="profile-li">
+                    <a href="#">个人中心<span></span></a>
+                    <ul class="subnav">
+                        <li><a href="#">个人信息</a></li>
+                        <li><a href="#">修改密码</a></li>
+                        <li><a href="#">修改邮箱</a></li>
+                    </ul>
+                </li>
+
+                    <li class="nav-group banner-manage"><a href="{{ url_for('cms.banner_manage') }}">轮播图管理</a></li>
+                    <li class="posting"><a href="{{ url_for('cms.postings') }}">发布咨询</a></li>
+                    <li class="post-manage"><a href="{{ url_for('cms.post_manage') }}">资讯管理</a></li>
+                    <li class="board-manage"><a href="{{ url_for('cms.boards') }}">版块管理</a></li>
+
+                    <li class="nav-group message"><a href="{{ url_for('cms.message') }}">用户咨询</a></li>
+
+
+
+
+              </ul>
+          </div>
+          <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+            <h1>{% block content_title %}{% endblock %}</h1>
+            <div class="main_content">
+                {% block content %}<P style="font-size: 50px">千寻科技后台管理系统</P>{% endblock %}
+            </div>
+          </div>
+      </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+{% extends 'cms/base.html' %}
+{% block css_js %}
+    {{ js_static('common/paginate/paginate.js') }}
+    {{ js_static('js/cms/message.js') }}
+{#    {{ css_static('css/cms/post_manage.css') }}#}
+{% endblock %}
+{% block content %}
+    <table class="table table-bordered">
+        <tr>
+            <th>#</th>
+            <th>姓名</th>
+            <th>手机</th>
+            <th>邮箱</th>
+            <th><a href="{{ url_for('cms.message',search='kind') }}">类型</a></th>
+            <th><a href="{{ url_for('cms.message',search='time') }}">提交时间</a></th>
+            <th>操作</th>
+        </tr>
+        {% for message in paginate.items %}
+        {% set kind_list = ['电商从业合规','消费者维权','知识产权保护','其他'] %}
+        {% set kind = message.kind %}
+        <tr data-id="{{ message.id }}" data-name="{{ message.name }}" >
+            <td class="index">{{ loop.index }}</td>
+            <td>{{ message.name}}</td>
+            <td>{{ message.tel }}</td>
+            <td>{{ message.email }}</td>
+            <td>{{ kind_list[kind-1] }}</td>
+            <td>{{ message.create_time }}</td>
+            <td>
+                <button class="btn btn-danger delete-post">删除</button>
+                <button class="btn btn-primary" data-toggle="modal" data-target="{{"#myModal"+loop.index|string }}">问题详情</button>
+
+                  {#模态框#}
+                    <div class="modal fade" id={{ "myModal"+loop.index|string }}  tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="myModalLabel">咨询者：{{ message.name }}&nbsp;&nbsp;&nbsp;&nbsp;咨询类别：{{ kind_list[kind-1] }}</h4>
+                                </div>
+                                <div class="modal-body">{{ message.question }}</div>
+                            </div>
+                        </div>
+                    </div>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% include'common/paginate.html' %}
+{% endblock %}

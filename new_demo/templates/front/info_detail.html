@@ -1,0 +1,14 @@
+{% extends 'front/base.html' %}
+{% block css_js %}
+{{ css_static("css/front/info_detail.css") }}
+{% endblock %}
+{% block content %}
+    <div class="post-container">
+        <p class="location">位置：<a href="{{ url_for('front.info')}}">行业资讯</a>-><a href="{{ url_for('front.info',id=posting.board_id)}}">{{ posting.board.name }}</a></p>
+        <article class="post">
+            <h1>{{ posting.title }}</h1>
+            <p class="time">发布时间：{{ posting.create_time }}</p>
+            <p class="post-content">{{ posting.content|safe }}</p>
+        </article>
+    </div>
+{% endblock %}

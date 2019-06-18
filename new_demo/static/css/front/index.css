@@ -1,0 +1,163 @@
+div.service-head{
+    text-align: center;
+}
+
+div.solution-head{
+    text-align: center;
+}
+
+div.info-head{
+    text-align: center;
+}
+
+div.about-head{
+    text-align: center;
+}
+
+div.service-content>div{
+    height: 300px;
+    margin-right: 10px ;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    background-color: rgba(92,92,92,0.5);
+    cursor: pointer;
+}
+
+div.service-content>div:hover{
+    background-color: rgba(201, 87, 55,0.8);
+}
+
+div.service-content{
+    overflow: hidden;
+}
+
+div.service-info{
+    width: 98%;
+    height: 90%;
+}
+
+
+div.service-pic{
+    margin-top: 35%;
+    text-align: center;
+    font-size: 30px;
+}
+
+div.service-title{
+    margin-top: 20%;
+    text-align: center;
+    font-family: "Times New Roman",Times,serif;
+    font-size:25px ;
+    color: white;
+}
+
+div.service-img{
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -111;
+}
+
+div.service-img img{
+    width: 100%;
+}
+
+div.service-tip{
+    margin-top: 10%;
+    font-size: 12px;
+    text-align: center;
+    color: #c6c6c6;
+}
+
+
+
+/*解决方案*/
+div.solution-banner{
+    margin: 20px auto;
+    padding: 0 10%;
+}
+
+ul.solution-bar{
+    padding-left: 28%;
+}
+
+ul.solution-bar li{
+    padding-left: 10%;
+    font-size: 18px;
+}
+
+
+
+
+
+/*行业资讯*/
+div.info-content{
+    background-color: #f1f3f9;
+    overflow: hidden;
+}
+
+
+div.info-more{
+    padding:0 20px;
+    color: #c83d3d;
+    overflow: hidden;
+}
+
+div.info-more p:last-child{
+    text-align: right;
+    border-top:1px solid #ddd;
+}
+
+div.info-more>p>a{
+    color: #999;
+}
+
+div.info-pic{
+    background-color: #00a0e9;
+    height: 250px;
+    cursor: pointer;
+}
+
+div.info-pic:hover{
+    border: 2px solid greenyellow;
+}
+
+div.info-pic img{
+    height: 100%;
+    width: 100%;
+}
+
+div.info-title{
+
+    width: 100%;
+    height: 35px;
+    line-height: 35px;
+    font-size: 14px;
+    color: #fff;
+    text-align: center;
+    background-color: rgba(0,0,0,.5);
+    position: relative;
+    bottom: 35px;
+}
+
+
+
+
+
+
+/*关于我们*/
+div.about-content{
+    width: 100%;
+    background-color: #00a0e9;
+    height: 300px;
+    overflow: hidden;
+}
+
+div.about-info{
+    margin-top: 150px;
+    text-align: center;
+}
+
+div.about-info a:first-child{
+    margin-right: 20%;
+}

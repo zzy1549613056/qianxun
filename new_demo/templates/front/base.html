@@ -1,0 +1,99 @@
+{% from 'common/macros.html' import css_static,js_static %}
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>千寻科技</title>
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://cdn.bootcss.com/sweetalert/2.1.0/sweetalert.min.js"></script>
+    {{ css_static('css/front/base.css') }}
+    {{ js_static('js/front/base.js') }}
+    {% block css_js %}{% endblock %}
+
+</head>
+<body>
+    <nav class="navbar  navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="{{ url_for('front.index') }}">
+              <img alt="Brand" src="{{ url_for('static',filename='img/logo.png') }}">
+          </a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+            <!-- <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li> -->
+
+          </ul>
+          <form class="navbar-form navbar-left" action="{{ url_for('front.search') }}" method="post">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="咨询搜索" name="content">
+            </div>
+            <button type="submit" class="btn btn-default">站内搜索</button>
+          </form>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="index-li"><a href="{{ url_for('front.index') }}">首页</a> </li>
+            <li class="service-li"><a href="{{ url_for('front.service') }}">产品与服务</a></li>
+            <li class="dropdown solution-li">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">解决方案 <span class="caret"></span></a>
+              <ul class="dropdown-menu dropdown-menu-left">
+                <li><a href="{{ url_for('front.solution',id=1) }}">电商从业者合规运营咨询培训</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="{{ url_for('front.solution',id=2) }}">消费者消费维权咨询培训</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="{{ url_for('front.solution',id=3) }}">知名品牌知识产权保护咨询</a></li>
+              </ul>
+            </li>
+            <li class="info-li"><a href="{{ url_for('front.info') }}">行业资讯</a></li>
+            <li class="about-li"><a href="{{ url_for('front.about') }}">关于我们</a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+<!-- 轮播图 -->
+    <div class="content-container">
+        {% block content %}{% endblock %}
+    </div>
+<footer>
+    <div class="foot-container row">
+        <div class="right col-md-4 col-md-push-8" >
+           <p>微信公众号</p>
+           <div class="wechat">
+               <img width="100px" height="100px" src="{{ url_for('static',filename='img/QR.png') }}">
+           </div>
+        </div>
+        <div class="left col-md-8 col-md-pull-4">
+           <p class="contact">联系方式：</p>
+           <p class="phone">025-8888888</p>
+           <p>业务咨询：张先生&nbsp&nbsp<span class="glyphicon glyphicon-phone"></span>1323232323</p>
+           <p>法律顾问：丁先生&nbsp&nbsp<span class="glyphicon glyphicon-phone"></span>1323232323</p>
+           <p><span class="glyphicon glyphicon-map-marker"></span>南京市溧水区永阳街道秦淮大道288号</p>
+        </div>
+    </div>
+    <div class="bottom-bar">
+        <div>
+            <P class="link">
+                友情链接：
+                <span><a href="http://www.baidu.com">百度</a> </span>
+                <span><a href="www.sohu.com">搜狐</a> </span>
+            </P>
+        </div>
+        <div>
+            <p>© 2017 千寻科技 苏ICP备17036417-1 南京千寻信息科技有限公司</p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

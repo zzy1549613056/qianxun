@@ -1,0 +1,101 @@
+{% extends 'cms/base.html' %}
+
+
+{% block content_title %}轮播图管理{% endblock %}
+
+{% block css_js %}
+{{ css_static('css/cms/banner.css') }}
+{{ js_static('js/cms/banner.js') }}
+{% endblock %}
+
+{% block content %}
+<div class="top-box">
+    <button class="btn btn-warning add-banner" data-toggle="modal" data-target="#banner-dialog">添加轮播图</button>
+</div>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>名称</th>
+            <th>图片链接</th>
+            <th>跳转链接</th>
+            <th>优先级</th>
+            <th>创建时间</th>
+            <th>操作</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for banner in banners %}
+        <tr data-id="{{ banner.id }}" data-name="{{ banner.name }}" data-img="{{ banner.img_url }}" data-link="{{ banner.link_url }}" data-weight="{{ banner.weight }}">
+            <td>{{ banner.name }}</td>
+            <td><a href="{{  banner.img_url  }}" target="_blank">{{ banner.img_url|truncate(30,True,'..',0) }}</a></td>
+            <td>{{ banner.link_url|truncate(30,True,'..',0) }}</td>
+            <td>{{ banner.weight }}</td>
+            <td>{{ banner.create_time }}</td>
+            <td>
+                <button class="btn btn-primary btn-xs edit-banner">编辑</button>
+                <button class="btn btn-danger btn-xs delete-banner">删除</button>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<!-- Modal -->
+<div class="modal fade" id="banner-dialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">添加轮播图</h4>
+      </div>
+      <div class="modal-body">
+        <form class="form-horizontal">
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label">名称</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="name" placeholder="轮播图名称">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label">图片</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="img-url" placeholder="图片">
+                </div>
+            </div>
+            <div id="container">
+                <div class="progress">
+                    <span class="progress-bar"></span>
+                </div>
+                <a id="selectfiles" href="javascript:void(0);" class='btn btn-default'>选择文件</a>
+                <a id="postfiles" href="javascript:void(0);" class='btn btn-default'>开始上传</a>
+                <span id="ossfile">你的浏览器不支持HTML5！</span>
+            </div>
+
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label">跳转</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="link-url" placeholder="跳转链接">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="inputEmail3" class="col-sm-2 control-label">优先级</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="weight" placeholder="优先级">
+                </div>
+            </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+        <button type="button" class="btn btn-primary" id="add-banner">应用</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Modal -->
+<!--js代码放在按钮生成以后-->
+{{ js_static("common/aliyun/plupload.full.min.js") }}
+{{ js_static("js/cms/banner_upload.js") }}
+
+{% endblock %}

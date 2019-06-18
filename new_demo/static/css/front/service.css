@@ -1,0 +1,21 @@
+div.back-img{
+    width: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -10;
+}
+
+div.back-img img{
+    width: 100%;
+    height: 300px;
+}
+
+div.jumbotron{
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 50px;
+    max-width: 1600px;
+    position: relative;
+    background-color: rgba(238,238,238,0);
+}

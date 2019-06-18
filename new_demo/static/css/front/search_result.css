@@ -1,0 +1,10 @@
+div.search-container{
+    max-width: 1600px;
+    margin: 0 auto;
+    width: 90%;
+}
+
+div.search-container>div{
+    border-bottom: 1px solid lightgrey;
+    padding-bottom: 10px;
+}

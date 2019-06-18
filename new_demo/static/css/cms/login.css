@@ -1,0 +1,24 @@
+body {
+  background-color: #eee;
+}
+
+div.form-container{
+    margin-right:auto ;
+    margin-left: auto;
+    margin-top: 20px;
+    padding: 30px;
+    width:35%;
+    min-width:340px;
+    background-color: white;
+}
+
+h1.title-text{
+    text-align: center;
+}
+
+div.checkbox {
+    padding-top: 0!important;
+    font-weight: normal;
+    min-height: 20px!important;
+}
+

@@ -1,0 +1,23 @@
+div.top-box{
+    overflow: hidden;
+    padding: 10px 0;
+}
+button.add-banner{
+    float:right;
+}
+button.add-picture{
+    padding: 6px 24px;
+}
+div.progress{
+    height: 2px!important;
+    margin-bottom: 10px;
+}
+span.progress-bar{
+    width: 0%;
+}
+div#container{
+    margin-bottom: 10px;
+}
+a#selectfiles{
+    margin-left: 100px;
+}

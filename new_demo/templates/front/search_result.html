@@ -1,0 +1,25 @@
+{% extends 'front/base.html' %}
+{% block css_js %}
+    {{ js_static('js/front/search_result.js') }}
+    {{ css_static('css/front/search_result.css') }}
+{% endblock %}
+{% block content %}
+    <div class="search-container" data-search="{{ search }}">
+    {% if results %}
+    {% for result in results %}
+        <div>
+            <h4><a href="{{ url_for('front.info_detail',id=result.id) }}">{{ result.title }}</a></h4>
+            <p>
+                <span>{{ result.create_time }}</span>
+                <span>标签：{{ result.board.name }}</span>
+            </p>
+            <p>{{ result.content|safe|cut|search_cut(search) }}</p>
+        </div>
+    {% endfor %}
+    {% else %}
+        <div>
+            <p>没有结果</p>
+        </div>
+    {% endif %}
+    </div>
+{% endblock %}

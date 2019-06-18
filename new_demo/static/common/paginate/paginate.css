@@ -1,0 +1,5 @@
+
+ul.pagination li a{
+    min-width: 42px;
+    min-height: 34px;
+}
