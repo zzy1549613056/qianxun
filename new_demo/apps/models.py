@@ -38,3 +38,8 @@ class MessageModel(db.Model):
     kind = db.Column(db.Integer,nullable=False)
     question = db.Column(db.Text,nullable=False)
     create_time = db.Column(db.DateTime, default=datetime.now)
+
+# class TestModel(db.Model):
+#     __tablename__ = 'test'
+#     id = db.Column(db.Integer,primary_key=True,autoincrement=True)
+#     name = db.Column(db.String(255), nullable=False)
