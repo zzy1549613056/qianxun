@@ -16,7 +16,7 @@ class PostingsModel(db.Model):
     __searchable__ = ['title', 'content']
     __analyzer__ = ChineseAnalyzer()
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    title = db.Column(db.String(20),nullable=False)
+    title = db.Column(db.String(50),nullable=False)
     content = db.Column(db.Text,nullable=False)
     create_time = db.Column(db.DateTime,default=datetime.now)
     board_id = db.Column(db.Integer,db.ForeignKey('board.id'))

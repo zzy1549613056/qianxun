@@ -16,7 +16,7 @@
         {% for post in paginate.items %}
         <tr data-id="{{ post.id }}" data-title="{{ post.title }}">
             <td class="index"></td>
-            <td>{{ post.title |truncate(15,True,'..',0)}}</td>
+            <td>{{ post.title |truncate(20,True,'..',0)}}</td>
             <td>{{ post.create_time }}</td>
             <td>{{ post.board.name }}</td>
             <td><button class="btn btn-danger delete-post">删除</button></td>

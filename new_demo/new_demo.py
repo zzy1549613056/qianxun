@@ -60,5 +60,5 @@ def searcha(html,key):
 #     db.session.commit()
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0",port=5002)
+    app.run(host="0.0.0.0",port=5000)
     # app.run(host="0.0.0.0", port=5002, use_reloader=False)

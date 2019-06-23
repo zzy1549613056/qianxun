@@ -236,10 +236,11 @@ class LoginView(views.MethodView):
                 session['cms_user_id'] = user.id
                 return redirect(url_for('cms.index'))
             return self.get(error='账号或密码错误')
-        print (form.errors)
-        errors = (''.join(form.errors['username']) if form.errors['username'] else '')+' '+ \
-                 (''.join(form.errors['password']) if form.errors['password'] else '')
-        return self.get(error=errors)
+        else:
+            print(form.errors)
+            errors = (''.join(form.errors['username']) if form.errors.get('username') else '')+' '+ \
+                     (''.join(form.errors['password']) if form.errors.get('password') else '')
+            return self.get(error=errors)
 
 
 
