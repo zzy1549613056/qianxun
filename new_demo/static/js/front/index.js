@@ -44,15 +44,18 @@ $(function () {
         e.preventDefault();
         add_active($(this));
         $('.solution-banner').carousel(0);
+        $('.solution-tag').attr('href','/solution/1');
     });
     $('li.solution-2').click(function (e) {
         e.preventDefault();
         add_active($(this));
         $('.solution-banner').carousel(1);
+        $('.solution-tag').attr('href','/solution/2');
     });
     $('li.solution-3').click(function (e) {
         e.preventDefault();
         add_active($(this));
         $('.solution-banner').carousel(2);
+        $('.solution-tag').attr('href','/solution/3');
     });
 })

@@ -1,0 +1,64 @@
+div.solution-head{
+    background-color: rgb(16,67,92);
+    position: relative;
+}
+
+div.head-img{
+    margin: 0 auto;
+    max-width: 1500px;
+}
+
+
+div.head-img img{
+    width: 100%;
+}
+
+div.head-info{
+    position: absolute;
+    top:20%;
+    left: 20%;
+    color: black;
+}
+
+
+div.solution-1{
+    overflow: hidden;
+    width: 90%;
+    max-width: 1600px;
+    text-align: center;
+    margin: 50px auto;
+}
+
+
+
+div.solution-1 h1{
+    text-align: center;
+}
+div.solution-2{
+    padding: 30px;
+    text-align: center;
+}
+
+div.solution-3 {
+    padding-bottom:40px;
+    padding-top: 40px;
+}
+
+div.solution-2 img{
+    width: 60%;
+}
+
+
+
+
+
+
+@media (max-width: 768px) {
+    div.head-info h1{
+        font-size: 20px;
+    }
+    div.head-info h2{
+        font-size: 18px;
+    }
+
+}

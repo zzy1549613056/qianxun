@@ -1,0 +1,120 @@
+div.solution-head{
+    background-color: rgb(2,5,20);
+    position: relative;
+}
+
+div.head-img{
+    margin: 0 auto;
+    max-width: 1500px;
+}
+
+
+div.head-img img{
+    width: 100%;
+}
+
+div.head-info{
+    position: absolute;
+    color: white;
+    top:20%;
+    left: 20%;
+}
+
+
+div.solution-1{
+    overflow: hidden;
+    width: 90%;
+    max-width: 1600px;
+    margin: 50px auto;
+}
+
+div.solution-1 div{
+    padding: 30px;
+}
+
+div.solution-1 img{
+    width: 100%;
+}
+
+div.solution-1 h1{
+    text-align: center;
+}
+div.solution-2{
+    padding: 30px;
+    background-color: rgb(243,250,254);
+    text-align: center;
+}
+
+div.solution-3 {
+    padding-bottom:40px;
+    padding-top: 40px;
+}
+
+div.solution-2 img{
+    width: 60%;
+}
+
+div.solution-3 h1{
+    text-align: center;
+    margin-bottom: 50px;
+}
+div.example h2{
+    text-align: center;
+    color: white;
+}
+
+div.example>div{
+    border: 2px solid rgb(61,133,255);
+    border-radius: 10px;
+    /*height: 500px;*/
+    margin-right: 20px;
+    background-color: rgb(61,133,255);
+    padding-left: 0px;
+    padding-bottom: 0px;
+    padding-right: 0px;
+}
+
+div.example-img{
+    position: relative;
+}
+
+div.example-img img{
+    position: absolute;
+    left: 50%;
+    margin-left: -80px;
+    top: -27px;
+    z-index: 1;
+}
+
+div.example{
+    margin: 0 auto;
+    overflow: hidden;
+    max-width: 1600px;
+}
+
+div.example-content{
+    padding: 20px;
+    background-color: rgb(243,250,254)!important;
+    border-radius: 0 0 10px 10px;
+}
+
+.example-content p{
+    font-size: 15px;
+    line-height: 30px;
+    font-weight: 300;
+}
+
+.example-content span{
+    font-weight:800;
+}
+
+
+@media (max-width: 768px) {
+    div.head-info h1{
+        font-size: 20px;
+    }
+    div.head-info h2{
+        font-size: 18px;
+    }
+
+}

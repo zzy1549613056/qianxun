@@ -34,7 +34,14 @@ def service():
 ##############################解决方案
 @front_bp.route('/solution/<int:id>')
 def solution(id):
-    return render_template('front/solution.html', id=id)
+    if id == 1:
+        return render_template('front/solution_1.html')
+    if id == 2:
+        return render_template('front/solution_2.html')
+    if id == 3:
+        return render_template('front/solution_3.html')
+    else:
+        return '404'
 
 
 ##############################行业咨询
